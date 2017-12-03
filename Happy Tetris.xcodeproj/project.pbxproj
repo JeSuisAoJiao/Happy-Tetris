@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F01E24281FAE0F6C00EC8BF4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E24271FAE0F6C00EC8BF4 /* Preview.swift */; };
+		F0B3CA0D1FAB972000D0DABC /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B3CA0C1FAB972000D0DABC /* Board.swift */; };
 		F0DBB8681FA8D648002DC179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB8671FA8D648002DC179 /* AppDelegate.swift */; };
 		F0DBB86A1FA8D648002DC179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB8691FA8D648002DC179 /* ViewController.swift */; };
 		F0DBB86D1FA8D648002DC179 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DBB86B1FA8D648002DC179 /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		F0DBB8721FA8D648002DC179 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DBB8701FA8D648002DC179 /* LaunchScreen.storyboard */; };
 		F0DBB87D1FA8D649002DC179 /* Happy_TetrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB87C1FA8D649002DC179 /* Happy_TetrisTests.swift */; };
 		F0DBB8881FA8D649002DC179 /* Happy_TetrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB8871FA8D649002DC179 /* Happy_TetrisUITests.swift */; };
+		F0DBB8961FA8D8D2002DC179 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB8951FA8D8D2002DC179 /* Shape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F01E24271FAE0F6C00EC8BF4 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		F0B3CA0C1FAB972000D0DABC /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		F0DBB8641FA8D648002DC179 /* Happy Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Tetris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DBB8671FA8D648002DC179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0DBB8691FA8D648002DC179 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		F0DBB8831FA8D649002DC179 /* Happy TetrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Happy TetrisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DBB8871FA8D649002DC179 /* Happy_TetrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_TetrisUITests.swift; sourceTree = "<group>"; };
 		F0DBB8891FA8D649002DC179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0DBB8951FA8D8D2002DC179 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				F0DBB86E1FA8D648002DC179 /* Assets.xcassets */,
 				F0DBB8701FA8D648002DC179 /* LaunchScreen.storyboard */,
 				F0DBB8731FA8D648002DC179 /* Info.plist */,
+				F0DBB8951FA8D8D2002DC179 /* Shape.swift */,
+				F0B3CA0C1FAB972000D0DABC /* Board.swift */,
+				F01E24271FAE0F6C00EC8BF4 /* Preview.swift */,
 			);
 			path = "Happy Tetris";
 			sourceTree = "<group>";
@@ -259,6 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DBB8961FA8D8D2002DC179 /* Shape.swift in Sources */,
+				F0B3CA0D1FAB972000D0DABC /* Board.swift in Sources */,
+				F01E24281FAE0F6C00EC8BF4 /* Preview.swift in Sources */,
 				F0DBB86A1FA8D648002DC179 /* ViewController.swift in Sources */,
 				F0DBB8681FA8D648002DC179 /* AppDelegate.swift in Sources */,
 			);
@@ -426,14 +438,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QAYRCSL75Z;
 				INFOPLIST_FILE = "Happy Tetris/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SHENGXinheng.Happy-Tetris";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,14 +455,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QAYRCSL75Z;
 				INFOPLIST_FILE = "Happy Tetris/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SHENGXinheng.Happy-Tetris";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

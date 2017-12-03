@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,118 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Happy_Tetris" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtW-0m-Jqj" userLabel="Board" customClass="Board" customModule="Happy_Tetris" customModuleProvider="target">
+                                <rect key="frame" x="10" y="58" width="300" height="450"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GG6-qs-hcB">
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6z-pi-Mk9" userLabel="Left">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <state key="normal" title="◀">
+                                            <color key="titleColor" red="0.9882352941176471" green="0.75686274509803919" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="leftTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bRZ-Cc-oLg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig6-je-bOM" userLabel="Down">
+                                        <rect key="frame" x="85" y="0.0" width="65" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <state key="normal" title="▼">
+                                            <color key="titleColor" red="0.13333333333333333" green="0.6470588235294118" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="downTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A37-Rx-8Qu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS5-IE-KKp" userLabel="Rotate">
+                                        <rect key="frame" x="170" y="0.0" width="65" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <state key="normal" title="↻">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.3529411764705882" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rotateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfD-bQ-agh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAF-Sz-Dgp" userLabel="Right">
+                                        <rect key="frame" x="255" y="0.0" width="65" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <state key="normal" title="▶">
+                                            <color key="titleColor" red="0.72156862745098038" green="0.41960784313725491" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rightTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mq6-G1-PgP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-CA-dTD">
+                                <rect key="frame" x="8" y="20" width="304" height="38"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU9-6N-cpT" userLabel="Time">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F61-Eg-dUO" userLabel="Preview" customClass="Preview" customModule="Happy_Tetris" customModuleProvider="target">
+                                        <rect key="frame" x="101.5" y="0.0" width="101" height="38"/>
+                                        <color key="backgroundColor" white="0.24851703643798828" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Rjo-Pl-Fki" appends="YES" id="RaE-yO-D1X"/>
+                                        </connections>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIa-Ud-an4" userLabel="Score">
+                                        <rect key="frame" x="202.5" y="0.0" width="101.5" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.57647058823529407" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.24851703643798828" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gtW-0m-Jqj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="25S-32-ZXr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZcO-CA-dTD" secondAttribute="trailing" constant="8" id="25U-cH-aoI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gtW-0m-Jqj" secondAttribute="trailing" constant="10" id="EAj-ZY-A8u"/>
+                            <constraint firstItem="ZcO-CA-dTD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="Iux-Fv-lbF"/>
+                            <constraint firstItem="ZcO-CA-dTD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Kwl-JO-MGb"/>
+                            <constraint firstItem="gtW-0m-Jqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="NTP-th-Rvs"/>
+                            <constraint firstItem="GG6-qs-hcB" firstAttribute="top" secondItem="gtW-0m-Jqj" secondAttribute="bottom" id="Ozp-tU-Q5y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtW-0m-Jqj" secondAttribute="bottom" constant="60" id="Tz7-Ap-1x2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GG6-qs-hcB" secondAttribute="bottom" id="WXV-rr-zvX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GG6-qs-hcB" secondAttribute="trailing" id="Zar-VM-nqq"/>
+                            <constraint firstItem="gtW-0m-Jqj" firstAttribute="top" secondItem="ZcO-CA-dTD" secondAttribute="bottom" id="bxZ-oc-fRG"/>
+                            <constraint firstItem="GG6-qs-hcB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ekf-et-lK0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="board" destination="gtW-0m-Jqj" id="GHd-PT-m8n"/>
+                        <outlet property="preview" destination="F61-Eg-dUO" id="YNy-sJ-74u"/>
+                        <outlet property="scoreLabel" destination="KIa-Ud-an4" id="sk7-g3-X9S"/>
+                        <outlet property="timeLabel" destination="RU9-6N-cpT" id="rkl-MQ-VWc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Rjo-Pl-Fki">
+                    <connections>
+                        <action selector="activeHappyMode:" destination="F61-Eg-dUO" id="x2w-mg-KsA"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
